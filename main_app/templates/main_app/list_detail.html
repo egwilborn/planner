@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{list.title}}</h1>
+<h3>Add a new List Item</h3>
+<form action="{% url 'create_todo' list.id %}" method="POST">
+  {% csrf_token %}
+  <!-- Render the inputs -->
+  {{ todo_form.as_p }}
+  <input type="submit" class="button" value="Add To Do" />
+</form>
+{% endblock content %}
