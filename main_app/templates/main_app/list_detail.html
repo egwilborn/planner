@@ -1,19 +1,41 @@
 {% extends 'base.html' %} {% block content %}
-<h1>{{list.title}}</h1>
-<ul>
-  {% for todo in list.todo_set.all %}
-  <li>
-    {{todo.content}} <span style="text-align: right">{{todo.date_added}}</span>
-  </li>
-  {% endfor %}
-</ul>
+<div
+  class="container"
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <h1 style="padding: 20px 20px 20px 20px">{{list.title}}</h1>
+  <ul class="list-group" style="width: 60vw; padding: 20px 20px 20px 20px">
+    {% for todo in list.todo_set.all %}
+    <li
+      class="list-group-item"
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <p style="font-size: 120%">{{todo.content}}</p>
+      <p style="font-size: 80%; font-style: italic">
+        added {{todo.date_added}}
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
 
-<h3>Add a new List Item</h3>
-<form action="{% url 'create_todo' list.id %}" method="POST">
-  {% csrf_token %}
-  <!-- Render the inputs -->
-  {{ todo_form.as_p }}
-  <input type="submit" class="button" value="Add To Do" />
-</form>
+  <div class="card" tyle="padding: 20px 20px 20px 20px">
+    <div class="card-header" style="font-size: 120%; font-weight: bold">
+      Add a new List Item
+    </div>
+    <div class="card-body">
+      <form action="{% url 'create_todo' list.id %}" method="POST">
+        {% csrf_token %}
+        <!-- Render the inputs -->
+        {{ todo_form.as_p }}
+        <input type="submit" class="button" value="Add To Do" />
+      </form>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
