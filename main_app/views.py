@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from .forms import TodoForm
 
 
-from .models import List
+from .models import List, Todo
 # Create your views here.
 
 
@@ -32,4 +32,12 @@ class ListDetail(DetailView):
 
 
 def todo_create(request, list_id):
-    render()
+    # need to make a variable with the modelform containing the information in the request
+    form = TodoForm(request.POST)
+    if form.is_valid():
+        # make a model instance using the form variable
+        # can't save it to DB yet since it doesn't have the list FK
+        new_todo = form.save(commit=False)
+        new_todo.list_id = list_id
+        new_todo.save()
+    return redirect('list_detail', pk=list_id)

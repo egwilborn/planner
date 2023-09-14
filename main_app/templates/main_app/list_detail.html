@@ -1,5 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <h1>{{list.title}}</h1>
+<ul>
+  {% for todo in list.todo_set.all %}
+  <li>
+    {{todo.content}} <span style="text-align: right">{{todo.date_added}}</span>
+  </li>
+  {% endfor %}
+</ul>
+
 <h3>Add a new List Item</h3>
 <form action="{% url 'create_todo' list.id %}" method="POST">
   {% csrf_token %}
@@ -7,4 +15,5 @@
   {{ todo_form.as_p }}
   <input type="submit" class="button" value="Add To Do" />
 </form>
+
 {% endblock content %}
