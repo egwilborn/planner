@@ -41,3 +41,8 @@ def todo_create(request, list_id):
         new_todo.list_id = list_id
         new_todo.save()
     return redirect('list_detail', pk=list_id)
+
+
+class TodoDelete(DeleteView):
+    model = Todo
+    success_url = "/lists/"

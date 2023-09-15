@@ -16,12 +16,8 @@
       style="display: flex; justify-content: space-between; align-items: center"
     >
       <p style="font-size: 120%">
-        <a href="">
-          <svg class="bi" width="32" height="32" fill="currentColor">
-            <use xlink:href="bootstrap-icons.svg#heart-fill" />
-          </svg>
-        </a>
         {{todo.content}}
+        <span><a href="{% url 'delete_todo' todo.id %}">X</a></span>
       </p>
       <p style="font-size: 80%; font-style: italic">
         added {{todo.date_added}}
