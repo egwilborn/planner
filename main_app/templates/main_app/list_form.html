@@ -1,12 +1,18 @@
 {% extends 'base.html' %} {% block content %}
-
-<form action="" method="POST">
-  <!-- Django requires the following for security purposes -->
-  {% csrf_token %}
-  <table>
-    <!-- Render the inputs inside of <tr>s & <td>s -->
-    {{ form.as_table }}
-  </table>
-  <input type="submit" value="Submit!" class="button" />
-</form>
+<div class="card w-50" style="margin: 20px 20px 20px 20px">
+  <div class="card-header" style="font-size: 120%; font-weight: bold">
+    Add a New To-Do List
+  </div>
+  <div class="card-body">
+    <form action="" method="POST">
+      <!-- Django requires the following for security purposes -->
+      {% csrf_token %}
+      <table>
+        <!-- Render the inputs inside of <tr>s & <td>s -->
+        {{ form.as_table }}
+      </table>
+      <input type="submit" value="Submit!" class="btn btn-primary" />
+    </form>
+  </div>
+</div>
 {% endblock content %}
