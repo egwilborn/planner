@@ -4,8 +4,9 @@
   style="
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    height: 100vh;
   "
 >
   <h1>Welcome to MyPlanner App</h1>
@@ -47,11 +48,17 @@
           <img
             src="https://i.imgur.com/3yYnwhW.jpg"
             class="d-block w-100"
-            alt="..."
+            alt="photo with laptop coffee notepad"
           />
           <div
             class="carousel-caption d-none d-md-block opacity-75"
-            style="background-color: black"
+            style="
+              background-color: black;
+              border-radius: 10px;
+              width: 50%;
+              left: 25%;
+              right: 25%;
+            "
           >
             <h5>Step Up Your Productivity!</h5>
           </div>
@@ -64,7 +71,14 @@
           />
           <div
             class="carousel-caption d-none d-md-block opactiy-75"
-            style="background-color: black"
+            style="
+              background-color: black;
+              border-radius: 10px;
+              width: 60%;
+              left: 20%;
+              right: 20%;
+              opacity: 75%;
+            "
           >
             <h5>No need to buy more notebooks</h5>
           </div>
@@ -77,7 +91,14 @@
           />
           <div
             class="carousel-caption d-none d-md-block opacity-75"
-            style="background-color: black"
+            style="
+              background-color: black;
+              border-radius: 10px;
+              width: 60%;
+              left: 20%;
+              right: 20%;
+              opacity: 75%;
+            "
           >
             <h5>All-in-One Planner App is here!</h5>
           </div>
@@ -103,7 +124,6 @@
       </button>
     </div>
   </div>
-  <h3><a href="{% url 'list_index'  %}">Your Lists</a></h3>
 </div>
 
 {% endblock %}
