@@ -1,8 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <h1>To-Do Lists</h1>
-<ul>
+<ul class="list-group list-group-flush">
   {% for list in list_list%}
-  <li><a href="{% url 'list_detail' list.id %}">{{list.title}}</a></li>
+  <li class="list-group-item w-50">
+    <a
+      class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+      href="{% url 'list_detail' list.id %}"
+      style="font-size: 2.5vw"
+      >{{list.title}}</a
+    >
+  </li>
   {% endfor %}
 </ul>
 {% endblock content %}
