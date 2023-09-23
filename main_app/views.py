@@ -46,3 +46,8 @@ def todo_create(request, list_id):
 class TodoDelete(DeleteView):
     model = Todo
     success_url = "/lists/"
+
+
+class ListDelete(DeleteView):
+    model = List
+    success_url = "/lists"

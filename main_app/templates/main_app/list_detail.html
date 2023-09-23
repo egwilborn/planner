@@ -10,10 +10,14 @@
       class="list-group-item"
       style="display: flex; justify-content: space-between; align-items: center"
     >
-      <p style="font-size: 120%">
-        {{todo.content}}
-        <span><a href="{% url 'delete_todo' todo.id %}">X</a></span>
-      </p>
+      <span style="display: flex; gap: 5px"
+        ><a
+          class="link-secondary link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          href="{% url 'delete_todo' todo.id %}"
+          >X</a
+        >
+        <p style="font-size: 120%">{{todo.content}}</p>
+      </span>
       <p style="font-size: 80%; font-style: italic">
         added {{todo.date_added}}
       </p>

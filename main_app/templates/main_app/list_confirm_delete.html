@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="card">
+    <div class="card-header">Confirm Delete Todo</div>
+    <div class="card-content" style="padding: 10px 10px 10px 10px">
+      Are you sure you want to delete "{{list.title}}" List?
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input
+          type="submit"
+          value="Delete"
+          class="btn btn-primary"
+          style="margin: 5px 5px 5px 5px"
+        />
+        <a href="{% url 'list_index' %}" style="margin: 5px 5px 5px 5px"
+          >Cancel</a
+        >
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

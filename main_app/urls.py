@@ -8,5 +8,6 @@ urlpatterns = [
     path('lists/<int:list_id>/todos/create',
          views.todo_create, name="create_todo"),
     path('todo/<int:pk>/delete/',
-         views.TodoDelete.as_view(), name="delete_todo")
+         views.TodoDelete.as_view(), name="delete_todo"),
+    path('list/<int:pk>/delete/', views.ListDelete.as_view(), name="remove_list")
 ]

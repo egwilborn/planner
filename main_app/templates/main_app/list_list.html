@@ -4,10 +4,17 @@
   {% for list in list_list%}
   <li class="list-group-item w-50">
     <a
+      class="link-secondary link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+      href="{% url 'remove_list' list.id %}"
+      style="font-size: 2vw"
+      >X</a
+    >
+    <a
       class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
       href="{% url 'list_detail' list.id %}"
       style="font-size: 2vw"
-      >{{list.title}}</a
+    >
+      {{list.title}}</a
     >
   </li>
   {% endfor %}
