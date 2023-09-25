@@ -4,10 +4,10 @@ Welcome to the planner app! This is a useful tool for making To Do Lists. Simply
 
 # Preview
 
-<img src="./Photos/Home-Page.png">
-<img src="./Photos/Add-a-List.png">
-<img src="./Photos/Lists-Pages.png">
-<img src="./Photos/List-Detail.png">
+<img src="./main_app/Photos/Home-Page.png">
+<img src="./main_app/Photos/Add-a-List.png">
+<img src="./main_app/Photos/Lists-Pages.png">
+<img src="./main_app/Photos/List-Detail.png">
 
 # Technologies
 
